@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="cruds">
+        <div class="main__title text-center my-4">
+            <h1>CRUDS</h1>
+            <h2>CREATE READ UPDATE DELETE SEARCH</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 ">
+                    <input class="form-control" type="text" placeholder="title" id="title">
+                </div>
+                <div class=" col-md-2 mt-4">
+                    <input class="form-control" type="text" placeholder="price" id="price" oninput="calcTotal()">
+                </div>
+                <div class=" col-md-2 mt-4">
+                    <input class="form-control" type="text" placeholder="taxes" id="taxes" oninput="calcTotal()">
+                </div>
+                <div class=" col-md-3 mt-4">
+                    <input class="form-control" type="text" placeholder="ads" id="ads" oninput="calcTotal()">
+                </div>
+                <div class=" col-md-3 mt-4">
+                    <input class="form-control" type="text" placeholder="discount" id="discount" oninput="calcTotal()">
+                </div>
+                <div class=" col-md-2 my-4  rounded-2 d-flex justify-content-center w-auto ">
+                    <p class=" m-auto bg-warning-subtle p-2 rounded-2" id="parag-bg" >total : <span id="total" ></span> </p>
+                </div>
+                <div class="col-12 ">
+                    <input class="form-control" type="text" placeholder="count" id="count">
+                </div>
+                <div class="col-12 ">
+                    <input class="form-control my-4" type="text" placeholder="category" id="category">
+                </div>
+                <div class="col-12 ">
+                    <button class="btn btn-success w-100" id="create" onclick="createTable()">Create</button>
+                </div>
+                <div class="col-12 my-4 ">
+                    <input oninput="searchData(this.value)" class="form-control" type="text" placeholder="search" id="search">
+                </div>
+                <div class="col-md-6 ">
+                    <button onclick="getSearchMood(this.id)" class="btn btn-success w-100" id="search-title" >Search By Title</button>
+                </div>
+                <div class="col-md-6 ">
+                    <button onclick="getSearchMood(this.id)" class="btn btn-success w-100" id="search-category" >Search By Category</button>
+                </div>
+                <div class="col-12 my-4  " id="deleteAll">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row ">
+            <table class="table  ">
+                <thead>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Taxes</th>
+                    <th>Ads</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="table">
+                </tbody>
+                
+            </table>
+            
+        </div>
+    </section>
+    <script src="./js/main.js"></script>
+</body>
+</html>
